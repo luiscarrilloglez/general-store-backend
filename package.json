@@ -1,0 +1,39 @@
+{
+  "name": "general-store-backend",
+  "version": "1.0.0",
+  "description": "General store backend repository.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "jest --forceExit",
+    "dev": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luiscarrilloglez/general-store-backend.git"
+  },
+  "keywords": [
+    "luiscarrilloglez",
+    "mongo",
+    "mongoose",
+    "javascript",
+    "node"
+  ],
+  "author": "Luis Genaro Carrillo Gonzalez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luiscarrilloglez/general-store-backend/issues"
+  },
+  "homepage": "https://github.com/luiscarrilloglez/general-store-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.9"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
+  }
+}
