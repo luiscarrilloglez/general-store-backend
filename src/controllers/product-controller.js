@@ -1,17 +1,17 @@
 const productService = require("../services/product-service");
 
-const listProducts = async (req, res, next) => {
+const listProducts = async (req, res, nextError) => {
   try {
-    const products = await productService.listProducts();
+    const products = await productService.listProducts(req.query);
 
     res.setHeader("Total", products.length);
     res.json(products);
   } catch (error) {
-    next(error);
+    nextError(error);
   }
 };
 
-const saveProduct = async (req, res, next) => {
+const saveProduct = async (req, res, nextError) => {
   const product = req.body;
 
   try {
@@ -19,11 +19,11 @@ const saveProduct = async (req, res, next) => {
 
     res.status(201).json(savedProduct);
   } catch (error) {
-    next(error);
+    nextError(error);
   }
 };
 
-const getProduct = async (req, res, next) => {
+const getProduct = async (req, res, nextError) => {
   const { id } = req.params;
 
   try {
@@ -35,11 +35,11 @@ const getProduct = async (req, res, next) => {
 
     res.json(product);
   } catch (error) {
-    next(error);
+    nextError(error);
   }
 };
 
-const updateProduct = async (req, res, next) => {
+const updateProduct = async (req, res, nextError) => {
   const { id } = req.params;
   const updateProduct = req.body;
 
@@ -55,18 +55,18 @@ const updateProduct = async (req, res, next) => {
 
     res.json(updatedProduct);
   } catch (error) {
-    next(error);
+    nextError(error);
   }
 };
 
-const deleteProduct = async (req, res, next) => {
+const deleteProduct = async (req, res, nextError) => {
   const { id } = req.params;
 
   try {
     await productService.deleteProduct(id);
     res.status(204).send();
   } catch (error) {
-    next(error);
+    nextError(error);
   }
 };
 

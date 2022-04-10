@@ -1,7 +1,15 @@
 const Product = require("../models/product");
 
-const listProducts = async () => {
-  const products = await Product.find().lean().exec();
+const listProducts = async (criteria) => {
+  const { category } = criteria;
+  const filters = {};
+
+  if (category) {
+    filters.category = { $in: [category] };
+  }
+
+  console.log(category, filters);
+  const products = await Product.find(filters).lean().exec();
 
   return products;
 };
