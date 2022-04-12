@@ -8,7 +8,6 @@ const listProducts = async (criteria) => {
     filters.category = { $in: [category] };
   }
 
-  console.log(category, filters);
   const products = await Product.find(filters).lean().exec();
 
   return products;
