@@ -4,7 +4,7 @@ const listProducts = async (req, res, nextError) => {
   try {
     const products = await productService.listProducts(req.query);
 
-    res.setHeader("Total products", products.length);
+    res.setHeader("Total", products.length);
     res.json(products);
   } catch (error) {
     nextError(error);
