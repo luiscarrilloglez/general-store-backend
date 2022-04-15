@@ -37,7 +37,6 @@ const orderIsValid = (req, res, next) => {
     "city",
     "state",
     "email",
-    "phone",
   ];
   const invalidProp = validateRequiredProps(order, requiredProps);
 
