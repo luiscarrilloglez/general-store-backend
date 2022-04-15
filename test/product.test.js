@@ -8,7 +8,7 @@ describe("Calling /posts with GET", () => {
     expect(response.status).toBe(200);
   });
 
-  test("It should response with an array", async () => {
+  test("It should response with an array of product objects", async () => {
     const response = await request(app).get("/product").send();
     expect(response.body).toBeInstanceOf(Array);
   });
