@@ -4,13 +4,15 @@ const cors = require("cors");
 require("dotenv").config();
 
 const productRouter = require("./routes/product");
+const orderRouter = require("./routes/order");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.use(express.json());
 app.use(cors());
-app.use("/products", productRouter);
+app.use("/product", productRouter);
+app.use("/order", orderRouter);
 
 app.use((error, req, res, next) => {
   console.error(error.stack);
