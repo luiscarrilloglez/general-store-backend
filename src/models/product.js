@@ -3,15 +3,14 @@ const { categories } = require("../constants");
 
 const ProductSchema = new mongoose.Schema(
   {
+    name: {
+      type: String,
+      required: true,
+    },
     category: {
       type: String,
       required: true,
       enum: Object.keys(categories),
-    },
-
-    name: {
-      type: String,
-      required: true,
     },
     imageUrl: {
       type: String,

@@ -15,7 +15,7 @@ const validateRequiredProps = (object, requiredProps) => {
 
 const productIsValid = (req, res, next) => {
   const product = req.body;
-  const requiredProps = ["name", "imageUrl", "price"];
+  const requiredProps = ["name", "category", "imageUrl", "price"];
   const invalidProp = validateRequiredProps(product, requiredProps);
 
   if (invalidProp !== "") {
@@ -45,6 +45,12 @@ const orderIsValid = (req, res, next) => {
     return res
       .status(400)
       .json({ message: `Property ${invalidProp} is required` });
+  }
+
+  if (!order.products?.length) {
+    return res
+      .status(400)
+      .json({ message: `At least one product is required` });
   }
 
   next();
