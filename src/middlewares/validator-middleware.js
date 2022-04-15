@@ -1,5 +1,5 @@
 const validateRequiredProps = (object, requiredProps) => {
-  const invalidProp = "";
+  let invalidProp = "";
   const obecjtCopy = { ...object };
 
   requiredProps.forEach((propName) => {
