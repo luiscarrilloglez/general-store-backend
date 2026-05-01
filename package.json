@@ -4,9 +4,9 @@
   "description": "General store backend repository.",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "node ./src/server.js",
     "test": "jest --forceExit",
-    "dev": "nodemon ./src/index.js"
+    "dev": "nodemon ./src/server.js"
   },
   "repository": {
     "type": "git",
