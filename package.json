@@ -27,9 +27,9 @@
   "homepage": "https://github.com/luiscarrilloglez/general-store-backend#readme",
   "dependencies": {
     "cors": "^2.8.6",
-    "dotenv": "^16.6.1",
-    "express": "^4.22.1",
-    "mongoose": "^6.13.9"
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.6.1"
   },
   "devDependencies": {
     "jest": "^29.7.0",

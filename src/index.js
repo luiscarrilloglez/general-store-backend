@@ -19,9 +19,9 @@ app.use((error, req, res, next) => {
   res.status(500).json({ message: error.message });
 });
 
-const connectDb = () => {
+const connectDb = async () => {
   try {
-    mongoose.connect(process.env.DB_URI);
+    await mongoose.connect(process.env.DB_URI);
     console.log("Database connected");
   } catch (error) {
     console.error(error);
