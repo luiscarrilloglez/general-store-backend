@@ -1,9 +1,17 @@
 const request = require("supertest");
 
+jest.mock("../src/services/product-service", () => ({
+  listProducts: jest.fn().mockResolvedValue([]),
+  saveProduct: jest.fn().mockResolvedValue({}),
+  getProduct: jest.fn().mockResolvedValue(null),
+  updateProduct: jest.fn().mockResolvedValue(null),
+  deleteProduct: jest.fn().mockResolvedValue(undefined),
+}));
+
 const app = require("../src/index");
 
 describe("Calling /posts with GET", () => {
-  test("It shuold response with a 200 status code", async () => {
+  test("It should response with a 200 status code", async () => {
     const response = await request(app).get("/product").send();
     expect(response.status).toBe(200);
   });
